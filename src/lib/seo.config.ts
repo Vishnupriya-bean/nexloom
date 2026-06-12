@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 
-const BASE_URL = "https://nexloom.com";
+const BASE_URL = "https://nexloom.co";
 const OG_IMAGE = `${BASE_URL}/images/logo.svg`;
 const SITE_NAME = "Nexloom";
 const DEFAULT_DESC =
