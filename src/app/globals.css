@@ -1,5 +1,82 @@
 @import "tailwindcss";
 
+@theme {
+  /* Colors */
+  --color-primary:       hsl(230, 84%, 55%);
+  --color-primary-dark:  hsl(230, 84%, 42%);
+  --color-primary-light: hsl(230, 84%, 70%);
+  --color-accent:        hsl(190, 95%, 50%);
+  --color-accent-dark:   hsl(190, 95%, 38%);
+  --color-dark:          #0a0a0f;
+  --color-dark-surface:  #12121a;
+  --color-dark-card:     #1a1a2e;
+  --color-text:          #f0f0f5;
+  --color-muted:         #8a8a9a;
+  --color-dim:           #6a6a7a;
+  --color-border:        rgba(255, 255, 255, 0.08);
+  --color-glass:         rgba(255, 255, 255, 0.04);
+  --color-white:         #ffffff;
+  --color-success:       #10b981;
+  --color-error:         #ef4444;
+
+  /* Font */
+  --font-sans: var(--font-montserrat);
+
+  /* Shadows */
+  --shadow-primary: 0 8px 32px rgba(59, 91, 219, 0.28);
+  --shadow-card:    0 4px 24px rgba(0, 0, 0, 0.3);
+  --shadow-large:   0 20px 60px rgba(0, 0, 0, 0.4);
+  --shadow-glow:    0 0 40px rgba(59, 91, 219, 0.2);
+
+  /* Border radius */
+  --radius-sm:   0.5rem;
+  --radius-base: 0.75rem;
+  --radius-lg:   1rem;
+  --radius-xl:   1.5rem;
+}
+
 html {
   scroll-behavior: smooth;
+}
+
+body {
+  background-color: #0a0a0f;
+  color: #f0f0f5;
+  font-family: var(--font-montserrat), system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Gradient text utility */
+.gradient-text {
+  background: linear-gradient(90deg, hsl(230, 84%, 70%), hsl(190, 95%, 60%));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Glass morphism card utility */
+.glass-card {
+  background: rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 0.75rem;
+}
+
+/* Gradient border utility */
+.gradient-border {
+  position: relative;
+}
+.gradient-border::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  padding: 1px;
+  border-radius: inherit;
+  background: linear-gradient(135deg, hsl(230, 84%, 55%), hsl(190, 95%, 50%));
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
 }
