@@ -1,0 +1,20 @@
+{
+  "navigationFallback": {
+    "rewrite": "/index.html",
+    "exclude": [
+      "/_next/*",
+      "/favicon.ico",
+      "/favicon.svg",
+      "/*.jpg",
+      "/*.jpeg",
+      "/*.png",
+      "/*.svg",
+      "/*.webp",
+      "/*.ico",
+      "/*.json"
+    ]
+  },
+  "mimeTypes": {
+    ".json": "application/json"
+  }
+}
