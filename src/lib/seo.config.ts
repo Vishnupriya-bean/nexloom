@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
 const BASE_URL = "https://nexloom.co";
-const OG_IMAGE = `${BASE_URL}/images/logo.svg`;
+const OG_IMAGE = `${BASE_URL}/og-image.png`;
 const SITE_NAME = "Nexloom";
 const DEFAULT_DESC =
   "Senior-led software engineering consultancy specialising in product engineering, cloud DevOps, AI automation, and integrations.";
@@ -32,7 +32,7 @@ function tw(title: string): Metadata["twitter"] {
 
 export const seoConfig = {
   home: {
-    title: "Nexloom | Senior-Led Software Engineering Consultancy",
+    title: "Nexloom | We Build Software That Ships",
     description:
       "We build production-grade software — from cloud infrastructure and AI automation to full-stack products and data integrations. Senior engineers only.",
     alternates: { canonical: `${BASE_URL}/` },
