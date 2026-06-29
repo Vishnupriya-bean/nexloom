@@ -78,7 +78,7 @@ export const seoConfig = {
   bookACall: {
     title: "Book a Call | Nexloom",
     description:
-      "Schedule a free 30-minute discovery call with the Nexloom team. Tell us about your project and we'll map the fastest path to production.",
+      "Schedule a free 45-minute complimentary discovery call with the Nexloom team. Tell us about your project and we'll map the fastest path to production.",
     alternates: { canonical: `${BASE_URL}/book-a-call` },
     robots: "index, follow",
     openGraph: og("Book a Call | Nexloom", DEFAULT_DESC, `${BASE_URL}/book-a-call`),

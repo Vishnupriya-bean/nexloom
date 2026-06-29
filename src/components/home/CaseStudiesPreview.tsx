@@ -19,60 +19,60 @@ function DiagonalArrowIcon({ className = "w-5 h-5" }: { className?: string }) {
   );
 }
 
-function CaseCard({ item, delay }: { item: CaseStudyPreviewItem; delay: number }) {
-  return (
-    <RevealOnScroll delay={delay}>
-      <Link href={item.href} className="group block h-full">
-        <GlassCard className="h-full flex flex-col overflow-hidden hover:-translate-y-2 hover:border-primary/30 hover:shadow-[0_20px_50px_-12px_rgba(17,24,39,0.18)] transition-all duration-300">
-          {/* Image */}
-          <div className="relative overflow-hidden" style={{ aspectRatio: "16/9" }}>
-            <Image
-              src={item.image}
-              alt={item.imageAlt}
-              fill
-              className="object-cover transition-transform duration-700 group-hover:scale-110"
-              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
-              loading="lazy"
-            />
-          </div>
+// function CaseCard({ item, delay }: { item: CaseStudyPreviewItem; delay: number }) {
+//   return (
+//     <RevealOnScroll delay={delay}>
+//       <Link href={item.href} className="group block h-full">
+//         <GlassCard className="h-full flex flex-col overflow-hidden hover:-translate-y-2 hover:border-primary/30 hover:shadow-[0_20px_50px_-12px_rgba(17,24,39,0.18)] transition-all duration-300">
+//           {/* Image */}
+//           <div className="relative overflow-hidden" style={{ aspectRatio: "16/9" }}>
+//             <Image
+//               src={item.image}
+//               alt={item.imageAlt}
+//               fill
+//               className="object-cover transition-transform duration-700 group-hover:scale-110"
+//               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
+//               loading="lazy"
+//             />
+//           </div>
 
-          {/* Body */}
-          <div className="flex flex-col flex-1 p-8 gap-3">
-            <span className="text-xs font-bold uppercase tracking-widest text-primary">
-              {item.category}
-            </span>
+//           {/* Body */}
+//           <div className="flex flex-col flex-1 p-8 gap-3">
+//             <span className="text-xs font-bold uppercase tracking-widest text-primary">
+//               {item.category}
+//             </span>
 
-            <div className="flex items-start justify-between gap-3">
-              <h3 className="text-xl font-bold text-fore leading-snug flex-1">
-                {item.title}
-              </h3>
-              <span className="shrink-0 text-muted-fore opacity-0 group-hover:opacity-100 group-hover:text-primary transition-all duration-300 mt-0.5">
-                <DiagonalArrowIcon />
-              </span>
-            </div>
+//             <div className="flex items-start justify-between gap-3">
+//               <h3 className="text-xl font-bold text-fore leading-snug flex-1">
+//                 {item.title}
+//               </h3>
+//               <span className="shrink-0 text-muted-fore opacity-0 group-hover:opacity-100 group-hover:text-primary transition-all duration-300 mt-0.5">
+//                 <DiagonalArrowIcon />
+//               </span>
+//             </div>
 
-            <p className="text-sm text-muted-fore leading-relaxed flex-1">
-              {item.excerpt}
-            </p>
+//             <p className="text-sm text-muted-fore leading-relaxed flex-1">
+//               {item.excerpt}
+//             </p>
 
-            <div className="flex items-center gap-1.5 text-sm font-semibold text-primary transition-all duration-300 group-hover:gap-2.5 mt-1">
-              Read Case Study
-              <DiagonalArrowIcon className="w-4 h-4" />
-            </div>
-          </div>
-        </GlassCard>
-      </Link>
-    </RevealOnScroll>
-  );
-}
+//             <div className="flex items-center gap-1.5 text-sm font-semibold text-primary transition-all duration-300 group-hover:gap-2.5 mt-1">
+//               Read Case Study
+//               <DiagonalArrowIcon className="w-4 h-4" />
+//             </div>
+//           </div>
+//         </GlassCard>
+//       </Link>
+//     </RevealOnScroll>
+//   );
+// }
 
 export default function CaseStudiesPreview() {
   const c = caseStudiesPreviewContent;
 
   return (
-    <SectionWrapper id="case-studies">
+    <SectionWrapper  id="case-studies" className="bg-[hsl(222,47%,11%)]">
       {/* Header */}
-      <div className="text-center mb-14 flex flex-col items-center gap-4">
+      {/* <div className="text-center mb-14 flex flex-col items-center gap-4">
         <RevealOnScroll>
           <SectionLabel>{c.sectionLabel}</SectionLabel>
         </RevealOnScroll>
@@ -86,22 +86,23 @@ export default function CaseStudiesPreview() {
             {c.subheading}
           </p>
         </RevealOnScroll>
-      </div>
+      </div> */}
 
       {/* 2×2 card grid */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 lg:gap-8 max-w-5xl mx-auto mb-12">
+      {/* <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 lg:gap-8 max-w-5xl mx-auto mb-12">
         {c.items.map((item, i) => (
           <CaseCard key={item.href} item={item} delay={i * 0.1} />
         ))}
-      </div>
+      </div> */}
 
-      <RevealOnScroll delay={0.2}>
+      {/* <RevealOnScroll delay={0.2}>
         <div className="text-center">
           <Button href={c.viewAllCta.href} variant="outline" size="lg">
             {c.viewAllCta.label}
           </Button>
         </div>
-      </RevealOnScroll>
+      </RevealOnScroll> */}
     </SectionWrapper>
+
   );
 }

@@ -16,8 +16,9 @@ export default function Home() {
       <Services />
       <WhyNexloom />
       <Stats />
-      <CaseStudiesPreview />
-      <CTA />
+       <CTA />
+      {/* <CaseStudiesPreview /> */}
+     
     </main>
   );
 }

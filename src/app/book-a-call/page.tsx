@@ -31,10 +31,10 @@ export default function BookACallPage() {
       >
         <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
           <h1 className="text-4xl lg:text-5xl font-bold text-white mb-4">
-            Book a Discovery Call
+            Book a Complimentary Discovery Call
           </h1>
           <p className="text-lg text-white/70 max-w-xl mx-auto">
-            Schedule a free 30-minute call with our team. We'll discuss your challenges, goals,
+            Schedule a free 45-minute call with our team. We'll discuss your challenges, goals,
             and how Nexloom can help.
           </p>
         </div>
@@ -49,7 +49,7 @@ export default function BookACallPage() {
             <RevealOnScroll className="flex-1 w-full min-w-0">
               <div className="rounded-2xl overflow-hidden border border-border-light bg-white shadow-card">
                 <iframe
-                  src="https://cal.com/stevefowler/30m?embed=true"
+                  src="https://cal.com/stevefowler/book-an-call-discovery-a-complimentary-call-45-min?embed=true"
                   style={{ width: "100%", height: "750px", border: "none" }}
                   title="Book a Call with Nexloom"
                   loading="lazy"
