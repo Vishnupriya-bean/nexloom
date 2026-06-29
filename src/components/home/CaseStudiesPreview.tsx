@@ -68,41 +68,41 @@ function DiagonalArrowIcon({ className = "w-5 h-5" }: { className?: string }) {
 
 export default function CaseStudiesPreview() {
   const c = caseStudiesPreviewContent;
+   return null;
+  // return (
+  //   <SectionWrapper  id="case-studies" className="bg-[hsl(222,47%,11%)]">
+  //     {/* Header */}
+  //     {/* <div className="text-center mb-14 flex flex-col items-center gap-4">
+  //       <RevealOnScroll>
+  //         <SectionLabel>{c.sectionLabel}</SectionLabel>
+  //       </RevealOnScroll>
+  //       <RevealOnScroll delay={0.1}>
+  //         <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-fore tracking-tight max-w-2xl">
+  //           {c.heading}
+  //         </h2>
+  //       </RevealOnScroll>
+  //       <RevealOnScroll delay={0.2}>
+  //         <p className="text-muted-fore text-lg max-w-2xl leading-relaxed">
+  //           {c.subheading}
+  //         </p>
+  //       </RevealOnScroll>
+  //     </div> */}
 
-  return (
-    <SectionWrapper  id="case-studies" className="bg-[hsl(222,47%,11%)]">
-      {/* Header */}
-      {/* <div className="text-center mb-14 flex flex-col items-center gap-4">
-        <RevealOnScroll>
-          <SectionLabel>{c.sectionLabel}</SectionLabel>
-        </RevealOnScroll>
-        <RevealOnScroll delay={0.1}>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-fore tracking-tight max-w-2xl">
-            {c.heading}
-          </h2>
-        </RevealOnScroll>
-        <RevealOnScroll delay={0.2}>
-          <p className="text-muted-fore text-lg max-w-2xl leading-relaxed">
-            {c.subheading}
-          </p>
-        </RevealOnScroll>
-      </div> */}
+  //     {/* 2×2 card grid */}
+  //     {/* <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 lg:gap-8 max-w-5xl mx-auto mb-12">
+  //       {c.items.map((item, i) => (
+  //         <CaseCard key={item.href} item={item} delay={i * 0.1} />
+  //       ))}
+  //     </div> */}
 
-      {/* 2×2 card grid */}
-      {/* <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 lg:gap-8 max-w-5xl mx-auto mb-12">
-        {c.items.map((item, i) => (
-          <CaseCard key={item.href} item={item} delay={i * 0.1} />
-        ))}
-      </div> */}
+  //     {/* <RevealOnScroll delay={0.2}>
+  //       <div className="text-center">
+  //         <Button href={c.viewAllCta.href} variant="outline" size="lg">
+  //           {c.viewAllCta.label}
+  //         </Button>
+  //       </div>
+  //     </RevealOnScroll> */}
+  //   </SectionWrapper>
 
-      {/* <RevealOnScroll delay={0.2}>
-        <div className="text-center">
-          <Button href={c.viewAllCta.href} variant="outline" size="lg">
-            {c.viewAllCta.label}
-          </Button>
-        </div>
-      </RevealOnScroll> */}
-    </SectionWrapper>
-
-  );
+  // );
 }
