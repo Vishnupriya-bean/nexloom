@@ -40,60 +40,50 @@ export default function CTA() {
   const c = ctaContent;
 
   return (
-    <SectionWrapper id="contact">
-      {/* Centred header + primary CTA */}
-      <div className="text-center flex flex-col items-center gap-5 mb-14">
-        <RevealOnScroll>
-          <SectionLabel>{c.sectionLabel}</SectionLabel>
-        </RevealOnScroll>
+    <SectionWrapper className="bg-[hsl(222,47%,11%)] pt-6 lg:pt-10" id="contact">
 
-        <RevealOnScroll delay={0.1}>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-fore tracking-tight max-w-2xl">
-            {c.heading}{" "}
-            <GradientText>{c.headingGradient}</GradientText>
-          </h2>
-        </RevealOnScroll>
 
-        <RevealOnScroll delay={0.2}>
-          <p className="text-muted-fore text-lg max-w-xl leading-relaxed">
-            {c.subheading}
-          </p>
-        </RevealOnScroll>
 
-        <RevealOnScroll delay={0.3}>
-          <Button href={c.primaryCta.href} size="lg" arrow className="gap-3">
-            <CalendarIcon />
-            {c.primaryCta.label}
-          </Button>
-        </RevealOnScroll>
-      </div>
-
-      {/* Contact cards */}
-      <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-4xl mx-auto">
-        {c.contactCards.map((card, i) => (
-          <RevealOnScroll key={card.title} delay={0.1 + i * 0.1}>
-            <GlassCard className="p-8 flex flex-col items-center text-center gap-4 h-full hover:-translate-y-2 transition-transform duration-300">
-              <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center text-primary">
-                {CONTACT_ICONS[i]}
-              </div>
-
-              <h3 className="text-lg font-bold text-fore">{card.title}</h3>
-
-              <div className="flex flex-col gap-1 flex-1">
-                {card.lines.map((line) => (
-                  <p key={line} className="text-sm text-muted-fore">{line}</p>
-                ))}
-              </div>
-
-              {card.action && (
-                <Button href={card.action.href} variant="outline" size="sm">
-                  {card.action.label}
-                </Button>
-              )}
-            </GlassCard>
+      <div className="w-full max-w-[1300px] mx-auto rounded-3xl border border-white/10 bg-[hsl(222,43%,27%)] px-6 sm:px-10 lg:px-14 py-12 sm:py-16 lg:py-20 min-h-[420px] sm:min-h-[460px]">
+        <div className="flex flex-col items-start gap-5 max-w-2xl">
+          <RevealOnScroll delay={0.1}>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight">
+              {c.heading}{" "}
+              <GradientText>{c.headingGradient}</GradientText>
+            </h2>
           </RevealOnScroll>
-        ))}
+
+          <RevealOnScroll delay={0.2}>
+            <p className="text-slate-300 text-base sm:text-lg leading-relaxed">
+              {c.subheading}
+            </p>
+          </RevealOnScroll>
+
+          <RevealOnScroll delay={0.3}>
+            <Button href={c.primaryCta.href} size="lg" arrow className="gap-3 mt-2">
+              <CalendarIcon />
+              {c.primaryCta.label}
+            </Button>
+          </RevealOnScroll>
+
+          {c.contactInfo && (
+            <RevealOnScroll delay={0.4}>
+              <p className="text-white text-base sm:text-lg mt-8">
+                {c.contactInfo.email}
+                <span className="mx-2 opacity-50">·</span>
+                {c.contactInfo.hours}
+              </p>
+            </RevealOnScroll>
+          )}
+        </div>
       </div>
+
+
+
+
+
+
+
     </SectionWrapper>
   );
 }
