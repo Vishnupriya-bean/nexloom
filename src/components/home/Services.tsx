@@ -61,7 +61,7 @@ function ServiceCard({ item, delay }: { item: ServiceItem; delay: number }) {
             <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-primary to-accent flex items-center justify-center text-white shadow-md transition-transform duration-300 group-hover:scale-110 shrink-0">
               {SERVICE_ICONS[item.href]}
             </div>
-
+            {/* just for raise pr */}
             <h3 className="text-xl font-bold text-fore">{item.title}</h3>
 
             <p className="text-sm text-muted-fore leading-relaxed">{item.description}</p>
