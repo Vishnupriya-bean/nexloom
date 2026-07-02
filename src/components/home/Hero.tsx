@@ -1,6 +1,6 @@
 export default function Hero() {
   return (
-    <section className="relative overflow-hidden text-center pt-[104px] pb-[92px] bg-[var(--color-bg)]">
+    <section className="relative overflow-hidden text-center pt-[52px] pb-[92px] bg-[var(--color-bg)]">
       <div className="pointer-events-none absolute inset-0 -top-[40%] h-[520px]" aria-hidden>
         <div
           className="w-full h-full"
