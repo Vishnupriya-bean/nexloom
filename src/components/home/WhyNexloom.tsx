@@ -6,33 +6,25 @@ export default function WhyNexloom() {
           <h2 className="text-[clamp(27px,3.6vw,38px)] leading-[1.12] tracking-[-0.02em] font-extrabold max-w-[22ch] text-white">
             The kind of problems we solve
           </h2>
-          <p className="text-[15px] text-[var(--color-muted)] mt-[18px] italic">
-            (You probably won't see these exact issues, but they rhyme with yours)
+          <p className="text-[16px] text-[var(--color-muted)] mt-[18px] italic">
+            We're building this practice deliberately and taking on a small number of clients. Here's the kind of work we take on:
           </p>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-y-[18px] gap-x-[34px] mt-[42px]">
-            <div className="flex items-start gap-[14px] text-[16px] text-[var(--color-muted)]">
-              <div className="shrink-0 w-[9px] h-[9px] rounded-full mt-[9px] bg-gradient-to-br from-[var(--color-primary)] to-[var(--color-accent)]" />
-              <span><b className="text-[var(--color-text)] font-semibold">Your internal tools don't talk to each other</b>, so your team spends half their day copying and pasting data.</span>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-y-[24px] gap-x-[40px] mt-[42px]">
+            <div className="flex items-start gap-[14px] text-[16px] text-[var(--color-muted)] leading-[1.6]">
+              <div className="shrink-0 w-[8px] h-[8px] rounded-full mt-[9px] bg-[#2b6cf6]" />
+              <span>A team <strong className="text-white font-semibold">re-keying the same orders into three systems</strong>, hours a week, with errors creeping in.</span>
             </div>
-            <div className="flex items-start gap-[14px] text-[16px] text-[var(--color-muted)]">
-              <div className="shrink-0 w-[9px] h-[9px] rounded-full mt-[9px] bg-gradient-to-br from-[var(--color-primary)] to-[var(--color-accent)]" />
-              <span><b className="text-[var(--color-text)] font-semibold">Your custom software is too hard to maintain</b>, and you're held hostage by the agency that built it.</span>
+            <div className="flex items-start gap-[14px] text-[16px] text-[var(--color-muted)] leading-[1.6]">
+              <div className="shrink-0 w-[8px] h-[8px] rounded-full mt-[9px] bg-[#2b6cf6]" />
+              <span>A business <strong className="text-white font-semibold">paying for five tools that don't talk to each other</strong>, and a sixth nobody uses.</span>
             </div>
-            <div className="flex items-start gap-[14px] text-[16px] text-[var(--color-muted)]">
-              <div className="shrink-0 w-[9px] h-[9px] rounded-full mt-[9px] bg-gradient-to-br from-[var(--color-primary)] to-[var(--color-accent)]" />
-              <span><b className="text-[var(--color-text)] font-semibold">You bought an expensive enterprise system</b>, but nobody uses it because the workflow makes no sense.</span>
+            <div className="flex items-start gap-[14px] text-[16px] text-[var(--color-muted)] leading-[1.6]">
+              <div className="shrink-0 w-[8px] h-[8px] rounded-full mt-[9px] bg-[#2b6cf6]" />
+              <span><strong className="text-white font-semibold">Reporting that takes two days to assemble by hand</strong> and is out of date by the time it lands.</span>
             </div>
-            <div className="flex items-start gap-[14px] text-[16px] text-[var(--color-muted)]">
-              <div className="shrink-0 w-[9px] h-[9px] rounded-full mt-[9px] bg-gradient-to-br from-[var(--color-primary)] to-[var(--color-accent)]" />
-              <span><b className="text-[var(--color-text)] font-semibold">Your operations run on 40 interconnected spreadsheets</b>, and the person who made them just quit.</span>
-            </div>
-            <div className="flex items-start gap-[14px] text-[16px] text-[var(--color-muted)]">
-              <div className="shrink-0 w-[9px] h-[9px] rounded-full mt-[9px] bg-gradient-to-br from-[var(--color-primary)] to-[var(--color-accent)]" />
-              <span><b className="text-[var(--color-text)] font-semibold">You're ready to automate manual work</b>, but you don't know what tool to buy or if you should build it yourself.</span>
-            </div>
-            <div className="flex items-start gap-[14px] text-[16px] text-[var(--color-muted)]">
-              <div className="shrink-0 w-[9px] h-[9px] rounded-full mt-[9px] bg-gradient-to-br from-[var(--color-primary)] to-[var(--color-accent)]" />
-              <span><b className="text-[var(--color-text)] font-semibold">Your development team is slow</b>, not because they're bad engineers, but because requirements keep changing.</span>
+            <div className="flex items-start gap-[14px] text-[16px] text-[var(--color-muted)] leading-[1.6]">
+              <div className="shrink-0 w-[8px] h-[8px] rounded-full mt-[9px] bg-[#2b6cf6]" />
+              <span><strong className="text-white font-semibold">A manual process that worked at ten customers</strong> and is breaking at a hundred.</span>
             </div>
           </div>
         </div>
