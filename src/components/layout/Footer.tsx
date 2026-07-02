@@ -12,7 +12,7 @@ export default function Footer() {
 
           {/* Brand */}
           <div>
-            <Link href="/" className="flex items-center gap-[11px] font-bold text-[18px] tracking-[-0.01em] mb-[14px]">
+            <Link href="/" className="inline-block font-bold text-[18px] tracking-[-0.01em] mb-[14px]">
               <span className="text-white">Nex</span><span className="text-[var(--color-blue-light)]">loom</span>
             </Link>
             <p className="max-w-[34ch]">
