@@ -4,7 +4,7 @@ import Hero from "@/components/home/Hero";
 import Services from "@/components/home/Services";
 import WhyNexloom from "@/components/home/WhyNexloom";
 import Stats from "@/components/home/Stats";
-import CaseStudiesPreview from "@/components/home/CaseStudiesPreview";
+
 import CTA from "@/components/home/CTA";
 
 export const metadata: Metadata = seoConfig.home;
@@ -18,7 +18,9 @@ export default function Home() {
       <Stats />
        <CTA />
       {/* <CaseStudiesPreview /> */}
-     
+
     </main>
   );
 }
+
+

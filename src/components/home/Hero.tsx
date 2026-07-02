@@ -28,10 +28,10 @@ function SparkleIcon() {
 export default function Hero() {
   return (
     <section
-      className="relative overflow-hidden min-h-[100vh] sm:min-h-[92vh] flex items-center"
+      className="relative overflow-hidden min-h-[100vh] sm:min-h-[92vh] flex items-center bg-[#040915]"
       style={{
         background:
-          "linear-gradient(135deg, hsl(222,47%,6%) 0%, hsl(230,40%,14%) 50%, hsl(222,35%,18%) 100%)",
+          "",
       }}
     >
       {/* Radial glow overlays */}
@@ -58,9 +58,8 @@ export default function Hero() {
           {/* Gradient-border pill */}
           <RevealOnScroll>
             <div className="inline-block mb-6 sm:mb-8">
-              <div className="gradient-border inline-flex items-center gap-2 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full bg-[#12121a] text-primary">
-                <SparkleIcon />
-                <span className="text-xs sm:text-sm font-semibold text-[#f0f0f5]/80 tracking-wide">
+              <div className="inline-flex items-center rounded-full border border-white/10 bg-[#0a0f1e] px-3 py-4">
+                <span className="text-xs font-semibold uppercase tracking-[0.15em] text-white/70">
                   {heroContent.pill}
                 </span>
               </div>
@@ -69,35 +68,46 @@ export default function Hero() {
 
           {/* Headline */}
           <RevealOnScroll delay={0.1}>
-            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold leading-[1.15] sm:leading-[1.1] tracking-tight text-[#f0f0f5] mb-4 sm:mb-6">
-              {heroContent.headline}{" "}
-              <GradientText>{heroContent.headlineGradient}</GradientText>
+            <h1 className="max-w-5xl mx-auto text-center font-bold tracking-[-0.05em] leading-[0.92] text-[#f5f7fb] mb-6">
+              <span className="block text-3xl sm:text-6xl md:text-7xl lg:text-[4.5rem]">
+                {heroContent.headline}
+              </span>
+
+              <span className="block mt-2 text-5xl sm:text-6xl md:text-7xl lg:text-[4.5rem]">
+                <GradientText>{heroContent.headlineGradient}</GradientText>
+              </span>
             </h1>
           </RevealOnScroll>
 
           {/* Subtitle */}
           <RevealOnScroll delay={0.2}>
-            <p className="text-base sm:text-lg lg:text-xl text-[#8a8a9a] leading-relaxed max-w-2xl mx-auto mb-8 sm:mb-10 px-2 sm:px-0">
+            <p className="mx-auto max-w-[740px] px-2 sm:px-0 mb-8 sm:mb-10 text-center text-base sm:text-lg lg:text-xl leading-[1.6] text-[#8a8a9a]">
               {heroContent.subtitle}
             </p>
           </RevealOnScroll>
 
+
+
           {/* CTA buttons */}
           <RevealOnScroll delay={0.3}>
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 mb-12 sm:mb-16">
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 mb-[25px]">
               <Button href={heroContent.ctaPrimary.href} size="lg" arrow>
                 {heroContent.ctaPrimary.label}
               </Button>
               {/* <Button href={heroContent.ctaSecondary.href} variant="outlineWhite" size="lg">
                 {heroContent.ctaSecondary.label}
               </Button> */}
+
+
+
+
             </div>
           </RevealOnScroll>
 
           {/* Trusted companies */}
           <RevealOnScroll delay={0.5}>
-            <div className="pt-6 sm:pt-8">
-              <p className="text-xs font-bold uppercase tracking-widest text-[#8a8a9a]/60 mb-4 sm:mb-5">
+            <div className="pt-0 sm:pt-0">
+              <p className="text-xs   tracking-[0.04em] text-blue-200/100 mb-4 sm:mb-5">
                 {heroContent.trustedLabel}
               </p>
               {/* <div className="flex flex-wrap items-center justify-center gap-x-8 gap-y-3">
@@ -118,3 +128,6 @@ export default function Hero() {
     </section>
   );
 }
+
+
+

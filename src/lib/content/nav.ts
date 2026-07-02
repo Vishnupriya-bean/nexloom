@@ -1,8 +1,8 @@
 export const NAV_LINKS = [
-  { label: "About us", href: "/about" },
-  { label: "How We Work", href: "/how-we-work" },
-  { label: "Case Studies", href: "/case-studies" },
-  { label: "Blog", href: "/blog" },
+  { label: "About ", href: "/about" },
+  { label: "How We Help", href: "/how-we-work" },
+  // { label: "Case Studies", href: "/case-studies" },
+  // { label: "Blog", href: "/blog" },
   { label: "Contact", href: "/contact" },
 ] as const;
 

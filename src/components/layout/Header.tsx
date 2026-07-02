@@ -48,89 +48,52 @@ export default function Header() {
       <header
         className={cn(
           "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
-          "bg-[hsla(222,47%,11%,0.95)] backdrop-blur-2xl",
-          scrolled ? "border-b border-white/10 shadow-lg shadow-black/20" : "border-b border-white/5"
+          "bg-[#0a0f1e] backdrop-blur-2xl border-b border-blue-200/5",
+          scrolled ? "shadow-lg shadow-black/20" : ""
         )}
       >
-        <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between h-16 lg:h-20">
+        {/* Top gradient accent line */}
+
+          <div className="h-[2px] w-full bg-gradient-to-r from-blue-500 via-cyan-400 to-blue-500"/>
+
+        <div className="max-w-[1280px] mx-auto px-6 lg:px-10 border-b border-blue-200/5">
+
+
+          <div className="flex items-center justify-between h-[76px]">
 
             {/* Logo */}
-            <Link href="/" className="flex items-center gap-2 group" onClick={() => setMobileOpen(false)}>
-              <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-primary to-accent flex items-center justify-center shadow-md transition-shadow group-hover:shadow-primary/40 group-hover:shadow-lg">
-                <Image
-                  src="/images/logo.svg"
-                  alt="Nexloom"
-                  width={28}
-                  height={28}
-                  className="object-contain"
-                  onError={(e) => {
-                    // fallback to text N if SVG fails
-                    (e.currentTarget as HTMLElement).style.display = "none";
-                  }}
-                />
-                <span className="text-white font-black text-lg leading-none hidden fallback-n">N</span>
-              </div>
-              <span className="font-bold text-xl text-white">
+            <Link href="/" className="flex items-center gap-2 group  ml-0 lg:ml-[95px]" onClick={() => setMobileOpen(false)}>
+              <span className="text-2xl font-extrabold text-white tracking-tight">
                 Nex<span className="gradient-text">loom</span>
               </span>
             </Link>
 
-            {/* Desktop Nav */}
-            <nav className="hidden lg:flex items-center gap-1">
-              {/* Services trigger */}
-              <div
-                ref={triggerRef}
-                onMouseEnter={() => setMegaOpen(true)}
-                onMouseLeave={() => setMegaOpen(false)}
-                className="relative"
-              >
-                <button
-                  className={cn(
-                    "flex items-center gap-1 px-4 py-2 text-sm font-medium transition-colors duration-200",
-                    megaOpen ? "text-accent" : "text-white/80 hover:text-accent"
-                  )}
-                  aria-expanded={megaOpen}
-                  aria-haspopup="true"
-                >
-                  Services
-                  <motion.svg
-                    animate={{ rotate: megaOpen ? 180 : 0 }}
-                    transition={{ duration: 0.2 }}
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth={2}
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    className="w-4 h-4"
+            {/* Nav links + CTA (right group) */}
+            <div className="hidden lg:flex items-center gap-9">
+              <nav className="flex items-center gap-9">
+                {NAV_LINKS.map((link) => (
+                  <Link
+                    key={link.href}
+                    href={link.href}
+                    className="text-[15px] font-medium text-white/70 hover:text-white transition-colors duration-200"
                   >
-                    <path d="m6 9 6 6 6-6" />
-                  </motion.svg>
-                </button>
-              </div>
+                    {link.label}
+                  </Link>
+                ))}
+              </nav>
 
-              {NAV_LINKS.map((link) => (
-                <Link
-                  key={link.href}
-                  href={link.href}
-                  className="px-4 py-2 text-sm font-medium text-white/80 hover:text-accent transition-colors duration-200"
-                >
-                  {link.label}
-                </Link>
-              ))}
-            </nav>
-
-            {/* Desktop CTA */}
-            <div className="hidden lg:block">
               <Link
                 href="/book-a-call"
-                className="inline-flex items-center gap-2 px-6 py-2.5 rounded-lg text-sm font-semibold text-white bg-gradient-to-r from-primary to-accent shadow-md hover:shadow-primary/40 hover:scale-[1.03] transition-all duration-300"
+                className="inline-flex items-center gap-2 rounded-full px-5 py-2.5 text-sm font-semibold text-white bg-gradient-to-r from-blue-500 to-cyan-400 hover:shadow-lg hover:shadow-blue-500/30 transition-all duration-300"
               >
-                Book a Call
+                Book a call
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" className="w-4 h-4">
+                  <path d="M5 12h14" /><path d="m12 5 7 7-7 7" />
+                </svg>
               </Link>
             </div>
+
+
 
             {/* Mobile toggle */}
             <button
@@ -199,7 +162,7 @@ export default function Header() {
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -8 }}
                 transition={{ duration: 0.18 }}
-                className="bg-[hsl(222,47%,11%)] border-t border-white/10 shadow-2xl shadow-black/50"
+                className="bg-[hsl(222,47%,11%)] border-t border- white shadow-2xl shadow-black/50"
               >
                 <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 py-10">
                   <div className="grid grid-cols-4 gap-12">
@@ -265,7 +228,7 @@ export default function Header() {
               className="fixed top-0 right-0 bottom-0 z-50 w-80 max-w-full bg-[hsl(222,47%,9%)] border-l border-white/10 lg:hidden overflow-y-auto"
             >
               {/* Drawer header */}
-              <div className="flex items-center justify-between px-5 h-16 border-b border-white/10">
+              <div className="flex items-center justify-between px-5 h-16 border-b ">
                 <Link href="/" onClick={() => setMobileOpen(false)} className="flex items-center gap-2">
                   <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-primary to-accent flex items-center justify-center">
                     <span className="text-white font-black text-sm">N</span>
@@ -346,9 +309,12 @@ export default function Header() {
                   <Link
                     href="/book-a-call"
                     onClick={() => setMobileOpen(false)}
-                    className="flex items-center justify-center w-full px-6 py-3 rounded-lg text-sm font-semibold text-white bg-gradient-to-r from-primary to-accent shadow-md hover:shadow-primary/40 transition-all duration-300"
+                    className="flex items-center justify-center gap-2 w-full px-6 py-3 rounded-md text-sm font-semibold text-white bg-gradient-to-r from-blue-500 to-cyan-400 shadow-md hover:shadow-primary/40 transition-all duration-300"
                   >
                     Book a Call
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" className="w-4 h-4">
+                      <path d="M5 12h14" /><path d="m12 5 7 7-7 7" />
+                    </svg>
                   </Link>
                 </div>
               </div>
