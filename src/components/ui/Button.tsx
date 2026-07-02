@@ -16,11 +16,11 @@ type ButtonProps = {
 };
 
 const base =
-  "inline-flex items-center justify-center gap-2 font-semibold rounded-lg transition-all duration-300 whitespace-nowrap";
+  "inline-flex items-center justify-center gap-2 font-semibold rounded-[11px] transition-all duration-150 whitespace-nowrap";
 
 const variants = {
   primary:
-    "bg-gradient-to-r from-primary to-accent text-white shadow-md hover:shadow-primary/40 hover:scale-[1.03]",
+    "bg-gradient-to-r from-primary to-accent text-white hover:brightness-110 hover:-translate-y-px",
   outline:
     "border-2 border-primary text-primary bg-transparent hover:bg-primary hover:text-white transition-colors duration-300",
   outlineWhite:
@@ -28,9 +28,9 @@ const variants = {
 };
 
 const sizes = {
-  sm: "text-sm h-9 px-4",
-  md: "text-sm h-11 px-5",
-  lg: "text-base h-12 px-7",
+  sm: "text-[14px] px-[16px] py-[8px]",
+  md: "text-[15px] px-[22px] py-[12px]",
+  lg: "text-[16px] px-[30px] py-[15px]",
 };
 
 export default function Button({
@@ -52,19 +52,9 @@ export default function Button({
     <>
       {children}
       {arrow && (
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          strokeWidth={2}
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          className="w-4 h-4 transition-transform group-hover:translate-x-0.5"
-        >
-          <path d="M5 12h14" />
-          <path d="m12 5 7 7-7 7" />
-        </svg>
+        <span className="ml-0.5 transition-transform group-hover:translate-x-1 text-[1.1em] leading-none">
+          →
+        </span>
       )}
     </>
   );

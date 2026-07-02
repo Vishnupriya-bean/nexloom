@@ -51,6 +51,9 @@ function Counter({ target, suffix, isFloat }: StatItem) {
 }
 
 export default function Stats() {
+  if (!statsContent || statsContent.length === 0) {
+    return null;
+  }
   return (
     <section
       className="relative overflow-hidden py-20 lg:py-28"

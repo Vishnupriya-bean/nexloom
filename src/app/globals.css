@@ -1,49 +1,28 @@
 @import "tailwindcss";
 
 @theme {
-  /* Brand colors */
-  --color-primary:       hsl(230, 84%, 55%);
-  --color-primary-dark:  hsl(230, 84%, 42%);
-  --color-primary-light: hsl(230, 84%, 70%);
-  --color-accent:        hsl(190, 95%, 50%);
-  --color-accent-dark:   hsl(190, 95%, 38%);
+  /* Brand colors (matched from HTML) */
+  --color-primary: #2b6cf6;
+  --color-accent: #35c7ef;
+  --color-blue-light: #5aa2f0;
 
-  /* Dark palette — used for hero, stats, header, footer */
-  --color-dark:          hsl(222, 47%, 6%);
-  --color-dark-surface:  hsl(222, 47%, 11%);
-  --color-dark-card:     hsl(222, 47%, 14%);
+  /* UI Colors */
+  --color-bg: #0b1020;
+  --color-bg-alt: #0e1530;
+  --color-panel: #131c34;
+  --color-line: rgba(255,255,255,0.09);
+  --color-text: #f5f7fb;
+  --color-muted: #97a1b8;
 
-  /* Light palette — page body, sections */
-  --color-bg:            hsl(220, 20%, 97%);
-  --color-bg-alt:        hsl(220, 14%, 94%);
-  --color-fore:          hsl(222, 47%, 11%);
-  --color-muted-fore:    hsl(220, 9%, 46%);
-  --color-border-light:  hsl(220, 13%, 88%);
-
-  /* Legacy aliases kept for Header/Footer */
-  --color-text:          #f0f0f5;
-  --color-muted:         #8a8a9a;
-  --color-border:        rgba(255, 255, 255, 0.08);
-  --color-glass:         rgba(255, 255, 255, 0.04);
-  --color-white:         #ffffff;
-  --color-success:       #10b981;
-  --color-error:         #ef4444;
-
-  /* Font */
-  --font-sans: var(--font-montserrat);
+  /* Base overrides */
+  --color-border: rgba(255,255,255,0.09);
 
   /* Shadows */
-  --shadow-primary: 0 8px 32px rgba(59, 91, 219, 0.28);
-  --shadow-card:    0 4px 24px -4px rgba(17, 24, 39, 0.08);
-  --shadow-card-hover: 0 20px 50px -12px rgba(17, 24, 39, 0.18);
-  --shadow-large:   0 20px 60px rgba(0, 0, 0, 0.4);
-  --shadow-glow:    0 0 40px rgba(59, 91, 219, 0.2);
+  --shadow-primary: 0 8px 32px rgba(43,108,246,0.28);
+  --shadow-card: 0 4px 24px -4px rgba(17,24,39,0.08);
 
   /* Border radius */
-  --radius-sm:   0.5rem;
-  --radius-base: 0.75rem;
-  --radius-lg:   1rem;
-  --radius-xl:   1.5rem;
+  --radius-xl: 14px;
 }
 
 html {
@@ -51,18 +30,19 @@ html {
 }
 
 body {
-  background-color: hsl(220, 20%, 97%);
-  color: hsl(222, 47%, 11%);
-  font-family: var(--font-montserrat), system-ui, sans-serif;
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Inter, Roboto, Helvetica, Arial, sans-serif;
+  line-height: 1.6;
   -webkit-font-smoothing: antialiased;
 }
 
-/* Gradient text utility */
+/* Gradient text utility matching HTML */
 .gradient-text {
-  background: linear-gradient(135deg, hsl(230, 84%, 55%), hsl(190, 95%, 50%));
+  background: linear-gradient(90deg, var(--color-primary), var(--color-accent));
   -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
   background-clip: text;
+  color: transparent;
 }
 
 /* Glass card — light theme */

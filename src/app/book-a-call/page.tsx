@@ -1,74 +1,100 @@
-import type { Metadata } from "next";
-import { seoConfig } from "@/lib/seo.config";
-import RevealOnScroll from "@/components/ui/RevealOnScroll";
+"use client";
 
-export const metadata: Metadata = seoConfig.bookACall;
-
-const infoCards = [
-  {
-    title: "No Commitment",
-    desc: "This is a free consultation. Ask questions, share your vision, explore possibilities.",
-  },
-  {
-    title: "Expert Guidance",
-    desc: "Speak directly with our technical team. Get actionable insights for your project.",
-  },
-  {
-    title: "Clear Next Steps",
-    desc: "Walk away with a clear understanding of timeline, scope, and investment.",
-  },
-];
+import { useEffect } from "react";
 
 export default function BookACallPage() {
+  useEffect(() => {
+    (function (C: any, A: any, L: any) {
+      let p = function (a: any, ar: any) {
+        a.q.push(ar);
+      };
+      let d = C.document;
+      C.Cal =
+        C.Cal ||
+        function () {
+          let cal = C.Cal;
+          let ar = arguments;
+          if (!cal.loaded) {
+            cal.ns = {};
+            cal.q = cal.q || [];
+            let script = d.createElement("script");
+            script.src = A;
+            d.head.appendChild(script);
+            cal.loaded = true;
+          }
+          if (ar[0] === L) {
+            const api = function () {
+              p(api, arguments);
+            };
+            const namespace = ar[1];
+            api.q = api.q || [];
+            if (typeof namespace === "string") {
+              cal.ns[namespace] = cal.ns[namespace] || api;
+              p(cal.ns[namespace], ar);
+              p(cal, ["initNamespace", namespace]);
+            } else p(cal, ar);
+            return;
+          }
+          p(cal, ar);
+        };
+    })(window, "https://app.cal.com/embed/embed.js", "init");
+
+    const Cal = (window as any).Cal;
+    if (Cal) {
+      Cal("init", "discovery", { origin: "https://cal.com" });
+      Cal.ns.discovery("inline", {
+        elementOrSelector: "#cal-inline",
+        config: { layout: "month_view" },
+        calLink: "stevefowler/book-an-call-discovery-a-complimentary-call-45-min",
+      });
+      Cal.ns.discovery("ui", { hideEventTypeDetails: false, layout: "month_view" });
+    }
+  }, []);
+
   return (
     <main>
-      {/* Hero */}
-      <section
-        className="pt-32 pb-16 lg:pt-40 lg:pb-20 text-center"
-        style={{
-          background: "linear-gradient(135deg, hsl(222,47%,6%) 0%, hsl(222,47%,11%) 100%)",
-        }}
-      >
-        <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
-          <h1 className="text-4xl lg:text-5xl font-bold text-white mb-4">
-            Book a Complimentary Discovery Call
+      <section className="relative overflow-hidden text-center pt-[64px] pb-[24px]">
+        {/* Glow behind */}
+        <div className="pointer-events-none absolute inset-0 -top-[40%] h-[420px]" aria-hidden>
+          <div
+            className="w-full h-full"
+            style={{
+              background: "radial-gradient(60% 80% at 50% 0%, rgba(43,108,246,0.22), transparent 70%)"
+            }}
+          />
+        </div>
+
+        <div className="relative max-w-[1100px] mx-auto px-[28px]">
+          <div className="inline-block text-[var(--color-muted)] font-semibold text-[13px] tracking-[0.12em] uppercase border border-[var(--color-line)] rounded-full px-[16px] py-[7px] mb-[22px]">
+            Discovery call · 45 minutes · complimentary
+          </div>
+          
+          <h1 className="text-[clamp(34px,5vw,52px)] leading-[1.05] tracking-[-0.03em] font-extrabold relative text-white">
+            Let's find what's <span className="gradient-text">slowing you down.</span>
           </h1>
-          <p className="text-lg text-white/70 max-w-xl mx-auto">
-            Schedule a free 45-minute call with our team. We'll discuss your challenges, goals,
-            and how Nexloom can help.
+          
+          <p className="text-[clamp(17px,2.2vw,20px)] text-[var(--color-muted)] mt-[20px] mx-auto max-w-[56ch] relative">
+            A short call, no pitch. Bring your most annoying technology problem. We'll tell you what we'd look at first, whether we're the right fit, and what it would take. Pick a time below.
           </p>
         </div>
       </section>
 
-      {/* Booking section */}
-      <section className="py-16">
-        <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col lg:flex-row gap-8 items-start">
-
-            {/* Calendar embed */}
-            <RevealOnScroll className="flex-1 w-full min-w-0">
-              <div className="rounded-2xl overflow-hidden border border-border-light bg-white shadow-card">
-                <iframe
-                  src="https://cal.com/stevefowler/book-an-call-discovery-a-complimentary-call-45-min?embed=true"
-                  style={{ width: "100%", height: "750px", border: "none" }}
-                  title="Book a Call with Nexloom"
-                  loading="lazy"
-                />
+      <section className="py-[28px] pb-[80px]">
+        <div className="max-w-[1100px] mx-auto px-[28px]">
+          <div className="bg-[var(--color-panel)] border border-[var(--color-line)] rounded-[18px] p-[10px] min-h-[640px] relative">
+            <div id="cal-inline" className="w-full h-[680px] overflow-auto rounded-[12px]">
+              <div className="text-center text-[var(--color-muted)] text-[14px] p-[18px]">
+                Loading the calendar… if it doesn't appear,{" "}
+                <a 
+                  className="gradient-text font-semibold" 
+                  href="https://cal.com/stevefowler/book-an-call-discovery-a-complimentary-call-45-min" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                >
+                  open the booking page directly →
+                </a>
               </div>
-            </RevealOnScroll>
-
-            {/* Info cards */}
-            <div className="flex flex-col gap-4 lg:w-72 shrink-0">
-              {infoCards.map((card, i) => (
-                <RevealOnScroll key={card.title} delay={i * 0.1} direction="right">
-                  <div className="glass-card rounded-2xl px-5 py-5">
-                    <h3 className="font-bold text-fore text-base mb-1">{card.title}</h3>
-                    <p className="text-sm text-muted-fore leading-relaxed">{card.desc}</p>
-                  </div>
-                </RevealOnScroll>
-              ))}
             </div>
-
           </div>
         </div>
       </section>

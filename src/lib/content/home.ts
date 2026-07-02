@@ -110,10 +110,10 @@ export const whyNexloomContent = {
   aboutText:
     "We're building this practice deliberately and taking on a small number of clients. Here's the kind of work we take on:",
   capabilities: [
-    "A team re-keying the same orders into three systems, hours a week, with errors creeping in.",
-    "A business paying for five tools that don't talk to each other, and a sixth nobody uses.",
-    "Reporting that takes two days to assemble by hand and is out of date by the time it lands.",
-    "A manual process that worked at ten customers and is breaking at a hundred.",
+    "A team <strong class='text-white font-semibold'>re-keying the same orders into three systems</strong>, hours a week, with errors creeping in.",
+    "A business <strong class='text-white font-semibold'>paying for five tools that don't talk to each other</strong>, and a sixth nobody uses.",
+    "Reporting that <strong class='text-white font-semibold'>takes two days to assemble by hand</strong> and is out of date by the time it lands.",
+    "A <strong class='text-white font-semibold'>manual process that worked at ten customers</strong> and is breaking at a hundred.",
   ],
   aboutCta: { label: "Learn More About Us", href: "/about" },
 
